@@ -1,0 +1,30 @@
+<div class="panel panel-default">
+<%= form_for(@pin) do |f| %>
+  <% if @pin.errors.any? %>
+    <div class="container" id="error_explanation">
+     <div class="panel-heading"><h2><%= pluralize(@pin.errors.count, "error") %> prohibited this pin from being saved:</h2></div>
+
+      <ul>
+      <% @pin.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class='panel-body'><div class="row">
+  <div class="col-xs-6 container">
+  <div class="form-group">
+    <%= f.label :description %><br>
+    <%= f.text_field :description, class: 'form-control' %>
+  </div>
+</div>
+</div>
+
+
+  <div class="actions">
+    <%= f.submit "Update", class: 'btn btn-primary' %>
+  </div>
+
+
+<% end %>
+</div>
